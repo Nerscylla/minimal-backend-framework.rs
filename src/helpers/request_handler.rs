@@ -1,5 +1,5 @@
 use std::{io::{Error, ErrorKind, Read, Write}, net::TcpStream};
-use crate::App;
+use crate::{App, HttpMethod};
 
 
 
@@ -47,7 +47,7 @@ pub fn handle_incoming_stream(app: &mut App, mut stream: TcpStream) {
     // response function
     let response_function = app
         .routes
-        .get(method)
+        .get(&HttpMethod::from_string(method.to_string()))
         .and_then(|method_map| method_map.get(path));
     if let Some(handler) = response_function {
         // execute handler
