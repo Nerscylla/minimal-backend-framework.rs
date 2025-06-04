@@ -1,4 +1,5 @@
 // enum for the HTTP methods available
+#[derive(Hash, Eq, PartialEq, Debug, Clone)]
 pub enum HttpMethod {
     DELETE,
     GET,
@@ -21,5 +22,18 @@ impl HttpMethod {
 			HttpMethod::POST => "POST".to_string(),
 			HttpMethod::PUT => "PUT".to_string(),
 		};
+	}
+
+	pub fn from_string(method: String) -> HttpMethod {
+		match method.to_uppercase().as_str() {
+			"DELETE" => HttpMethod::DELETE,
+			"GET" => HttpMethod::GET,
+			"HEAD" => HttpMethod::HEAD,
+			"OPTIONS" => HttpMethod::OPTIONS,
+			"PATCH" => HttpMethod::PATCH,
+			"POST" => HttpMethod::POST,
+			"PUT" => HttpMethod::PUT,
+			_ => HttpMethod::POST,
+		}
 	}
 }

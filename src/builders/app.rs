@@ -9,7 +9,7 @@ use std::collections::HashMap;
 pub struct App {
 	pub listener_port: u16,
 	pub listener_base_address: String,
-	pub routes: HashMap<String, HashMap<String, Box<dyn Fn() -> String>>>,
+	pub routes: HashMap<HttpMethod, HashMap<String, Box<dyn Fn() -> String>>>,
 	pub buffer_size: u64,
 }
 
@@ -30,15 +30,13 @@ impl App {
 
 	// function to register handlers for a specific route using a specific method
 	pub fn reg_path(&mut self, method: HttpMethod, path: String, handler_function: Box<dyn Fn() -> String>) {
-		// get the uppercase method as a string
-		let method_upper: String = method.to_string();
 		// add the route in self/routes/<method>/<path>:handler_function
 		self.routes
-			.entry(method_upper.clone())
+			.entry(method.clone())
 			.or_insert_with(HashMap::new)
 			.insert(path.clone(), handler_function);
 		// log the registration of the route
-		println!("Registered route: {} {}", method_upper, path)
+		println!("Registered route: {} {}", HttpMethod::to_string(&method), path)
 	}
 
 
