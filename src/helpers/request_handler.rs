@@ -38,8 +38,8 @@ pub fn handle_incoming_stream(app: &mut App, mut stream: TcpStream) {
 		.map(|s| s.to_string())
 		.collect();
 	// extract method and path from request
-	let method = &split_first_line[0];
-	let mut path = split_first_line[1].as_str();
+	let method = if split_first_line.len() == 3 { &split_first_line[0] } else { return };
+	let mut path = if split_first_line.len() == 3 { split_first_line[1].as_str() } else { return };
 	// Remove trailing slash if present (but not for root "/")
 	while path.len() > 1 && path.ends_with('/') {
 		path = &path[..path.len() - 1];
