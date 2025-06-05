@@ -24,6 +24,19 @@ fn main() {
         }),
     );
 
+    app.reg_path(
+        HttpMethod::GET,
+        "/test/path".to_string(),
+        Box::new(handler_test),
+    );
+
     // start listening
     app.listen();
+}
+
+fn handler_test(req: Request) -> String {
+    format!(
+        "test path. Request stuff:\nMethod: {},\nPath: {},\nHeaders: {:?}, \nBody: {}",
+        req.method, req.path, req.headers, req.body
+    )
 }
