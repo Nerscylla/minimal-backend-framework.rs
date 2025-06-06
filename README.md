@@ -5,10 +5,15 @@ This is just me trying to make a minimal Backend framework for the Rust programm
 
 ## Badges
 
-[![GPLv3 License](https://img.shields.io/badge/License-GPL_v3-red?style=for-the-badge&logo=GNU)](https://opensource.org/license/gpl-3-0)
+[![GPLv3 License](https://img.shields.io/github/license/Nerscylla/minimal-backend-framework.rs?style=for-the-badge&logo=GNU&color=red&logoColor=white)](https://opensource.org/license/gpl-3-0)
 
-[![Rust Language](https://img.shields.io/badge/Language-Rust-red?style=for-the-badge&logo=Rust)](https://www.rust-lang.org/)
+[![Rust Language](https://img.shields.io/badge/Language-Rust-orange?style=for-the-badge&logo=Rust&logoColor=white)](https://www.rust-lang.org/)
 
+![Version](https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2FNerscylla%2Fminimal-backend-framework.rs%2Frefs%2Fheads%2Fmain%2FCargo.toml&query=%24.package.version&style=for-the-badge&label=version&logo=V&logoColor=white)
+
+![Build](https://img.shields.io/github/actions/workflow/status/Nerscylla/minimal-backend-framework.rs/compile.yml?event=push&style=for-the-badge&logo=zsh&logoColor=white&label=build)
+
+![Tests](https://img.shields.io/github/actions/workflow/status/Nerscylla/minimal-backend-framework.rs/test.yml?event=push&style=for-the-badge&logo=githubactions&logoColor=white&label=tests)
 ## Roadmap
 
 - [ ]  abstract response into a seperate Struct
