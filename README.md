@@ -5,11 +5,15 @@ This is just me trying to make a minimal Backend framework for the Rust programm
 
 ## Badges
 
-[![GPLv3 License](https://img.shields.io/badge/License-GPL_v3-red?style=for-the-badge&logo=GNU
-)](https://opensource.org/license/gpl-3-0)
+<p align="center">
+	<a href="https://opensource.org/license/gpl-3-0">
+		<img src="https://img.shields.io/badge/License-GPL_v3-red?style=for-the-badge&logo=GNU" alt="GPLv3 License"/>
+	</a>
+	<a href="https://www.rust-lang.org/">
+		<img src="https://img.shields.io/badge/Language-Rust-red?style=for-the-badge&logo=Rust" alt="Rust Language"/>
+	</a>
+</p>
 
-[![Rust Language](https://img.shields.io/badge/Language-Rust-red?style=for-the-badge&logo=Rust
-)](https://www.rust-lang.org/)
 ## Roadmap
 
 - [ ]  abstract response into a seperate Struct
